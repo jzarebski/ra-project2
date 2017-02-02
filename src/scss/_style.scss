@@ -1,0 +1,468 @@
+/***************/
+/* FONT RULES  */
+/***************/
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Playfair Display", "serif";
+}
+
+h1 {
+	font-size: 2.75rem;
+}
+
+h2 {
+	font-size: 2.25rem
+}
+
+h3 {
+	font-size: 1.75rem;
+
+}
+
+h4 {
+	font-size: 1.25rem
+}
+
+h5 {
+	font-size: 1rem;
+	font-family: "raleway";
+}
+
+p {
+	font-family: "raleway";
+	font-size: 1rem;
+}
+
+.products h4 {
+	color:rgb(226,87,76);
+	font-weight:700;
+	padding:10px;
+}
+
+.text-size-up-h3 {
+	font-size:2.75rem;
+}
+
+.text-size-up-p {
+	font-size:1.25rem;
+}
+
+.address ul {
+	color:white;
+	font-family: "raleway", "san-serif";
+	text-align:center;
+
+		
+}
+
+/****************/
+/* TEXT STYLING */
+/****************/
+
+.bold {
+	font-style: normal;
+	font-weight: 700;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.text-center {
+	text-align:center;
+}
+
+.text-middle {
+  	vertical-align: middle;
+}
+
+.text-shadow {
+	text-shadow: 2px 2px 4px grey;
+
+}
+
+.text-normal{
+	text-decoration: none;
+}
+
+h1 {
+	width:100%;
+	padding-top: 27px;
+    line-height: 36px;
+}
+.line-break {
+	display:block;
+}
+
+.line-break1 {
+	display:block;
+}
+
+.line-height {
+	line-height: 5vh
+}
+/***************/
+/* TEXT COLORS */
+/***************/
+
+.white {
+	color: white;
+
+}
+
+.colorgrey{
+	color:grey;
+}
+
+.colorflamingo {
+	color:rgb(226,87,76)
+}
+
+/*************************/
+/****** BORDER RULES *****/
+/*************************/
+
+.border-top-small {
+	border-top:2px solid rgb(215,215,215);
+}
+
+.border-top-med {
+	border-top: 10px solid white;
+}
+/*********************/
+/* FLEX BOXES HEADER */
+/*********************/
+
+.flex-container {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	margin-top:5%;
+	width:100%;
+
+}
+
+.flex-item-nav {
+	order:3;
+	display: flex;
+	/*list-style: none;*
+    /*align-items: stretch; /* Default */
+    justify-content: space-around;
+    width: 100%;
+
+}
+/* the code below changes the order of my flex boxes*/
+
+/*************************/
+/* FLEX BOXES CATEGORIES */
+/*************************/
+
+.category {
+	margin-top:10%;
+
+}
+
+.parent {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.border-child {
+	border:5.5px solid white;
+}
+
+.category img {
+	object-fit:contain;
+	width: 100%;
+	height: 100%;
+}
+
+.flex-item2 {
+	width:48%;
+	position:relative;
+
+
+}
+
+.flex-item1 {
+	display:inline-flex;
+	position:relative;
+}
+
+.cat-div {
+	position:absolute;
+	top:34%;
+	text-align:center;
+
+}
+
+.category h1 {
+	font-family: "raleway";
+	font-size: 2.1rem;
+	
+
+}
+
+.address-footer{ 
+display: flex;
+flex-direction: column;
+font-family:"raleway";
+align-items: center;
+text-align:center;
+}
+
+/*********************/
+/* BACKGROUND IMAGES */
+/*********************/
+
+#banner {
+	min-height: 67vh;
+	background: url("../../assets/images/banner.jpg");
+	background-size: contain, auto 90%, cover;
+
+}
+
+#wave {
+	background-color: forestgreen;
+}
+
+/***************/
+/* Logo & Cart */
+/***************/
+
+.aloha-logo img {
+	max-width:50%;
+}
+
+.cart img {
+	height:70%;
+	position:relative;
+}
+
+/*******/
+/* NAV */
+/*******/
+
+.nav-list {
+	text-transform:uppercase;
+	color:rgb(226,87,76);
+	padding: 25px 0px;
+}
+
+
+/*****************/
+/* Padding Rules */
+/*****************/
+
+.top {
+	padding-top:25.5%;
+}
+.padding-top {
+	padding-top:5%;
+}
+
+.padding-top-10 {
+	padding-top:10%;
+}
+
+.padding-top-20	{
+	padding-top:20%;
+}
+
+.padding-top-30 {
+	padding-top:30%;
+}
+
+.padding-bot{
+	padding-bottom: 5%
+}
+
+.padding-left {
+	padding-left:2%;
+}
+
+.padding-top-bot-15 {
+	padding:15px 0px;
+}
+
+.padding-10 {
+	padding:10px;
+}
+
+/**********************/
+/* SOCIAL MEDIA RULES */
+/**********************/
+
+.mobile-align li{
+	margin: 2vh;
+}
+
+.text {
+
+}
+
+.socialicons{
+	display:inline-block;
+
+
+}
+
+.mobile {
+	display:none;
+	padding-top:5%;
+	text-decoration: none;
+	color:white;
+}
+
+.fa {
+	color:white;
+}
+
+.clearfix:after {
+	clear:both;
+	content:"";
+	display:block;
+}
+
+.socialicons ul {
+	display: inline-flex;
+    padding-right: 43%;
+}
+/*************/
+/*  SUBFORM  */
+/*************/
+
+.subform {
+	background-color:white;
+	border-radius:25px;
+	width:70%;
+	padding:4px;
+	display:inline-block;
+
+}
+
+input[type=text] {
+	float:left;
+	width:65%;
+	background:none;
+	border:none;
+	padding:9px ;
+	display:inline-block;
+
+}
+
+input[type=submit] {
+	float:right;
+	width:30%;
+	border-radius:25px;
+	background-color:rgb(226,87,76);
+	padding:5px;
+	line-height: 1.5rem;
+}
+
+
+
+/****************/
+/* OWL CAROUSEL */
+/****************/
+
+.products img{
+	width:50%;
+}
+
+/*********************/
+
+/* footer section*/
+.backgroundblack{
+	background-color:black;
+}
+
+.backgroundgreen{
+	background-color:forestgreen;
+}
+
+    
+
+/**************************/
+/*  TABLET RESPONSIVE CSS */
+/**************************/
+@media only screen and (min-width:602px) {
+
+	.border-top-small {
+		border-top: none;
+	}
+
+	.border-child {
+		border: none;
+	}
+
+	.mobile {
+		display: initial;
+		padding-top: 5%;
+		text-decoration: none;
+		color: white;
+	}
+
+	.address-footer {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: left;
+
+	}
+
+	.mobile-align li {
+		margin: 2vh;
+	}
+
+	.socialicons {
+		text-align: center;
+
+	}
+
+	.flex-container {
+		flex-wrap: nowrap;
+
+	}
+
+	.flex-item-nav {
+		order: 0;
+		width: 100%;
+		transform: translate(-17px);
+		padding-top: 3%;
+	}
+
+	.aloha-logo img {
+		max-width: 89%;
+	}
+
+	.cart img {
+		height: 75%;
+		position: relative;
+	}
+
+	.flex-item2 {
+		display: inline-flex;
+		width: 25%;
+		position: relative;
+
+	}
+
+	.flex-item1 {
+		display: inline-flex;
+		position: relative;
+		width: 50%;
+	}
+
+	.padding-top-20 {
+		padding-top: 10%
+	}
+
+	.top {
+		padding-top: 15.5%;
+	}
+
+	.line-break1 {
+		display: inline;
+	}
+}

@@ -65,7 +65,10 @@ export default class App {
 
     initShoppingCart() {
         $("#cartIcon").click(this, function (e) {
-            $("#cartView").fadeIn("slow");
+            $("#cartView, #overlay").fadeIn("slow");
+        });
+        $("#overlay").click(this, function (e) {
+            $("#overlay, #cartView").fadeOut("slow");
         });
     }
 }

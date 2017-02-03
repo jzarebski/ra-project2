@@ -217,8 +217,8 @@ text-align:center;
 
 #banner {
 	min-height: 67vh;
-	background: url("../../assets/images/banner.jpg");
-	background-size: contain, auto 90%, cover;
+	background: url("../../assets/images/banner.jpg") center, no-repeat;
+	background-size:cover;
 
 }
 
@@ -231,12 +231,12 @@ text-align:center;
 /***************/
 
 .aloha-logo img {
-	max-width:50%;
+	width:45%;
 }
 
 .cart img {
-	height:70%;
-	position:relative;
+	width:75%;
+
 }
 
 /*******/
@@ -433,14 +433,18 @@ input[type=submit] {
 	}
 
 	.aloha-logo img {
-		max-width: 89%;
+		width: 89%;
 	}
 
 	.cart img {
-		height: 75%;
+		width: 75%;
 		position: relative;
 	}
-
+	#cartView {
+		width:25%;
+		background-color: red;
+		display:none;
+	}
 	.flex-item2 {
 		display: inline-flex;
 		width: 25%;

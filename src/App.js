@@ -5,7 +5,9 @@
 import BestBuyWebService from './BestBuyWebService';
 import CatalogView from './CatalogView';
 import ShoppingCart from './ShoppingCart';
-//import ShoppingCartView from './ShoppingCartView'//
+import ShoppingCartView from './ShoppingCartView';
+
+
 
 export default class App {
 
@@ -17,6 +19,7 @@ export default class App {
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
+        this.initShoppingCart()
     }
 
     initBestBuyWebService(){

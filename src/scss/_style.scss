@@ -239,6 +239,15 @@ text-align:center;
 
 }
 
+#cartView {
+	background-color: white;
+	position:fixed;
+	top:0%;
+	left:0%;
+	width:100%;
+	height:100%;
+	display:none;
+}
 /*******/
 /* NAV */
 /*******/
@@ -434,16 +443,25 @@ input[type=submit] {
 
 	.aloha-logo img {
 		width: 89%;
-	}
+	}S
 
 	.cart img {
 		width: 75%;
 		position: relative;
 	}
 	#cartView {
-		width:25%;
-		background-color: red;
-		display:none;
+		background-color: white;
+		top: 50%;
+		left: 50%;
+		margin: -25%;
+		width: 50%;
+		height: 50%;
+	}
+	.popUpHide{
+		width:100%;
+		height:100%;
+		position:absolute;
+		background-color: rgba(0,0,0,.5);
 	}
 	.flex-item2 {
 		display: inline-flex;

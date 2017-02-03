@@ -9,20 +9,22 @@ import ShoppingCartView from './ShoppingCartView';
 
 
 
+
 export default class App {
 
-    constructor(){
+    constructor() {
         this.productData = null; // this will store all our data
         this.products = null; // stores specifically the products
         this.catalogView = new CatalogView(); // this will display our data
         this.shoppingCart = new ShoppingCart();
+        //this.shoppingCartView = new ShoppingCartView;
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
-        this.initShoppingCart()
+        this.initShoppingCart();
     }
 
-    initBestBuyWebService(){
+    initBestBuyWebService() {
         this.bbws = new BestBuyWebService();
         // use your own API key for this (the one from Cody)
         this.bbws.apiKey = "8ccddf4rtjz5k5btqam84qak";
@@ -35,11 +37,11 @@ export default class App {
 
     }
 
-    prepCatalog(){
+    prepCatalog() {
         // use this console.log to test the data
         // console.log(this.productData);
 
-        if(this.productData!=null){
+        if (this.productData != null) {
             // only get the products property (for now)
             // this code was copied from SimpleHTTPRequest.html
             this.products = this.bbws.getProducts();
@@ -61,7 +63,13 @@ export default class App {
 
     }
 
+    initShoppingCart() {
+        $("#cartIcon").click(this, function (e) {
+            $("#cartView").fadeIn("slow");
+        });
+    }
 }
+
 
 
 

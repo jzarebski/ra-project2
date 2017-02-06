@@ -13,6 +13,7 @@ import ShoppingCartView from './ShoppingCartView';
 export default class App {
 
     constructor() {
+        console.log("hi")
         this.productData = null; // this will store all our data
         this.products = null; // stores specifically the products
         this.catalogView = new CatalogView(); // this will display our data
@@ -22,6 +23,7 @@ export default class App {
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
         this.initShoppingCart();
+        this.initquickView ();
     }
 
     initBestBuyWebService() {
@@ -65,15 +67,40 @@ export default class App {
 
     initShoppingCart() {
         $("#cartIcon").click(this, function (e) {
-            $("#cartView, #overlay").fadeIn("slow");
+            $("#cartView, .overlay").fadeIn("slow");
         });
-        $("#overlay").click(this, function (e) {
-            $("#overlay, #cartView").fadeOut("slow");
+        $(".overlay").click(this, function (e) {
+            $(".overlay, #cartView").fadeOut("slow");
+        });
+    }
+
+    initquickView() {
+        $(document).on("click",'.quickViewBtn', function (e) {
+            //i want to add products in this quickViewBox
+            // i need img desc. price and sku
+            // get the products from this.products
+            // get the sku from Data-sku attribute of button
+            // loop throught the products to find match the sku with the data sku
+            // create for loop to cycle through products to find match
+            // use jquery to append html textnode
+            let imagesrc = "";
+            let someImage = new Image();
+            someImage.src = imagesrc;
+            someImage.addEventListener("load", function(e){
+                $("#qvImage").attr("src",this.src);
+            },false);
+
+            // $("#qvimage").on("load",imagesrc, function (e){
+            //    console.log(e.data);
+            // });
+
+            $(".quickViewBox, .overlayQv").fadeIn("slow");
+        });
+        $(document).on("click",'.overlayQv', function (e) {
+            $(".overlayQv, .quickViewBox").fadeOut("slow");
         });
     }
 }
-
-
 
 
 

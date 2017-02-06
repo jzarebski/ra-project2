@@ -120,6 +120,7 @@ export default class CatalogView{
                 quickViewButton.setAttribute("id", `qv_${product.sku}`);
                 quickViewButton.setAttribute("data-sku", product.sku);
                 quickViewButton.setAttribute("type", "button");
+                quickViewButton.setAttribute("class", "quickViewBtn")
                 let quickViewTextNode = document.createTextNode("Quick View");
                 quickViewButton.appendChild(quickViewTextNode);
 
@@ -127,10 +128,11 @@ export default class CatalogView{
                 addToCartButton.setAttribute("id", `cart_${product.sku}`);
                 addToCartButton.setAttribute("data-sku", product.sku);
                 addToCartButton.setAttribute("type", "button");
+                addToCartButton.setAttribute("class", "add2Cart");
                 let addToCartTextNode = document.createTextNode("Add To Cart");
                 addToCartButton.appendChild(addToCartTextNode);
-               addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp), false);
-
+                addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp), false);
+               console.log("click")
                 newDiv.appendChild(newImg);
                 newDiv.appendChild(newPara);
                 newDiv.appendChild(newH3Tag);

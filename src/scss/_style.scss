@@ -212,6 +212,25 @@ text-align:center;
 }
 
 /*********************/
+/*****  BUTTONS  *****/
+/*********************/
+.add2Cart {
+	background-color:forestgreen;
+	border-color: forestgreen;
+	color:white;
+	padding:2%;
+	width:30%;
+}
+
+.quickViewBtn {
+	background-color: White;
+	border-color: forestgreen;
+	padding:2%;
+	width:30%;
+}
+
+
+/*********************/
 /* BACKGROUND IMAGES */
 /*********************/
 
@@ -238,15 +257,26 @@ text-align:center;
 	width:75%;
 
 }
-#overlay {
+
+.overlay {
 	position: fixed;
 	top:0%;
 	background-color: rgba(0, 0, 0, .5);
 	width: 100%;
 	height: 100%;
 	display: none;
+	z-index:2;
 }
 
+.overlayQv {
+	position: fixed;
+	top:0%;
+	background-color: rgba(0, 0, 0, .5);
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index:2;
+}
 
 #cartView {
 	background-color: white;
@@ -256,7 +286,18 @@ text-align:center;
 	width:80%;
 	height:40%;
 	display:none;
+	z-index:3;
+}
 
+.quickViewBox {
+	background-color: white;
+	position:fixed;
+	top:25%;
+	left:10%;
+	width:80%;
+	height:40%;
+	display:none;
+	z-index:3;
 }
 /*******/
 /* NAV */
@@ -353,7 +394,7 @@ text-align:center;
 
 .subform {
 	background-color:white;
-	border-radius:25px;
+	border:25px;
 	width:70%;
 	padding:4px;
 	display:inline-block;
@@ -373,8 +414,8 @@ input[type=text] {
 input[type=submit] {
 	float:right;
 	width:30%;
-	border-radius:25px;
-	background-color:rgb(226,87,76);
+	border:25px;
+	background-color:Forestgreen;
 	padding:5px;
 	line-height: 1.5rem;
 }

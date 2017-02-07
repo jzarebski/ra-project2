@@ -52,14 +52,18 @@ export default class CatalogView{
     }
 
     onClickCartButton(theApp) {
+        console.log(theApp);
         return function (e) {
             console.log("onClickButton");
             console.log(e.target.getAttribute("data-sku"));
-            let theSku = e.target.getAttribute("data-sku");
-            theApp.shoppingCart.addItemToCart(theSku);
-        }}
-        addProductsToCarousel(products){
-
+            let sku = e.target.getAttribute("data-sku");
+            console.log(theApp);
+            console.log(theApp.shoppingCart);
+            theApp.shoppingCart.addItemToCart(sku);
+        }
+    }
+        addProductsToCarousel(products, theApp){
+            this.theApp = theApp;
             console.log(products);
             if (products === undefined || products == null) {
                 return; // do not do anything! there is no data
@@ -120,7 +124,7 @@ export default class CatalogView{
                 quickViewButton.setAttribute("id", `qv_${product.sku}`);
                 quickViewButton.setAttribute("data-sku", product.sku);
                 quickViewButton.setAttribute("type", "button");
-                quickViewButton.setAttribute("class", "quickViewBtn")
+                quickViewButton.setAttribute("class", "quickViewBtn");
                 let quickViewTextNode = document.createTextNode("Quick View");
                 quickViewButton.appendChild(quickViewTextNode);
 
@@ -130,9 +134,12 @@ export default class CatalogView{
                 addToCartButton.setAttribute("type", "button");
                 addToCartButton.setAttribute("class", "add2Cart");
                 let addToCartTextNode = document.createTextNode("Add To Cart");
+
                 addToCartButton.appendChild(addToCartTextNode);
+                console.log("this.theApp is");
+                console.log(this.theApp);
                 addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp), false);
-               console.log("click")
+               console.log("click cart button");
                 newDiv.appendChild(newImg);
                 newDiv.appendChild(newPara);
                 newDiv.appendChild(newH3Tag);

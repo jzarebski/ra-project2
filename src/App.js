@@ -16,8 +16,9 @@ export default class App {
         console.log("hi")
         this.productData = null; // this will store all our data
         this.products = null; // stores specifically the products
-        this.catalogView = new CatalogView(); // this will display our data
         this.shoppingCart = new ShoppingCart();
+        this.catalogView = new CatalogView(); // this will display our data
+
         //this.shoppingCartView = new ShoppingCartView;
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
@@ -47,7 +48,7 @@ export default class App {
             // only get the products property (for now)
             // this code was copied from SimpleHTTPRequest.html
             this.products = this.bbws.getProducts();
-            console.log(this.products);
+            console.log(this.products, "here i am producting");
         }
 
         this.showCatalog();
@@ -57,7 +58,7 @@ export default class App {
 
         // populate the catalog only if there are products
         if (this.productData != null) {
-            this.catalogView.addProductsToCarousel(this.products);
+            this.catalogView.addProductsToCarousel(this.products,this);
             // this.catalogView.showCatalog();
 
         }
@@ -83,7 +84,8 @@ export default class App {
             // loop throught the products to find match the sku with the data sku
             // create for loop to cycle through products to find match
             // use jquery to append html textnode
-            let imagesrc = "";
+            // use jquery to append html text
+            let imagesrc = "https://lh5.ggpht.com/tq3WqEUxtRyBn-d_0t3j6WKNHuJDrmLq-FE3GAYrsAMQFIaS7FIgRLfzzql2SvfvLqto=w300";
             let someImage = new Image();
             someImage.src = imagesrc;
             someImage.addEventListener("load", function(e){

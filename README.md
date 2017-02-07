@@ -1,3 +1,18 @@
+Project 2
+
+1) Session Storage works
+2) Pop-ups work (quick view and shopping cart).
+3) Didnt get to adding items into shopping cart.
+4) Didnt manage to load product info into quickview.
+5) Carousel functioning and loading JSON data
+6) CSS styling was barely touched.
+
+
+
+
+
+
+---------------------------------------------------------
 # Minimal ES6 Website Setup - for Shopping Cart
 
 A minimal website that would be required to run ES6 type code. 

@@ -111,7 +111,7 @@ h1 {
 }
 
 .colorgrey{
-	color:grey;
+	color:blue;
 }
 
 .colorflamingo {
@@ -165,35 +165,74 @@ h1 {
 
 }
 
-.parent {
+.cat-text-center{
+	text-align:center;
+	position:relative;
+	top:50%;
+}
+
+.box-container {
 	display: flex;
-    flex-wrap: wrap;
-}
-
-.border-child {
-	border:5.5px solid white;
-}
-
-.category img {
-	object-fit:contain;
+	flex-wrap: wrap;
 	width: 100%;
-	height: 100%;
 }
+
+.category-1{
+	flex:2 0 0;
+	background: url("/assets/images/laptop-category.jpg");
+	background-size: cover;
+}
+.category-2{
+	flex:1 0 0;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),transparent),url("/assets/images/tv-category.jpg");
+	background-size: cover;
+}
+.category-3{
+	flex:1 0 0;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),transparent),url("/assets/images/home-audio-category.jpg");
+	background-size: cover;
+}
+.category-4{
+	flex:1 0 0;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),transparent),url("/assets/images/tablet-category.jpg");
+	background-size: cover;
+}
+.category-5{
+	flex:1 0 0;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),transparent),url("/assets/images/desktop-category.jpg");
+	background-size: cover;
+}
+.category-6{
+	flex:2 0 0;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),transparent),url("/assets/images/cell-category.jpg");
+	background-size: cover;
+}
+.border-child {
+	border:2px solid white;
+}
+
+
+//.category img {
+//	object-fit:contain;
+//	width: 100%;
+//	height: 100%;
+//}
 
 .flex-item2 {
-	width:48%;
-	position:relative;
-
-
+	flex:1 1 23%;
+	height:30vh;
+	text-align:center;
 }
 
 .flex-item1 {
-	display:inline-flex;
-	position:relative;
+	flex:1 1 48%;
+	height:30vh;
+	text-align:center;
 }
 
+
 .cat-div {
-	position:absolute;
+	position:relative;
 	top:34%;
 	text-align:center;
 
@@ -364,12 +403,6 @@ text-align:center;
 
 }
 
-.socialicons{
-	display:inline-block;
-
-
-}
-
 .mobile {
 	display:none;
 	padding-top:5%;
@@ -449,16 +482,24 @@ input[type=submit] {
 /**************************/
 /*  TABLET RESPONSIVE CSS */
 /**************************/
-@media only screen and (min-width:602px) {
+@media only screen and (min-width:602px) and (max-width:1048px){
 
 	.border-top-small {
 		border-top: none;
 	}
 
 	.border-child {
-		border: none;
+		border: 2px solid white;
 	}
 
+	.flex-item1 {
+		flex:2 1 100%;
+
+	}
+
+	.flex-item2{
+		flex:1 1 48%;
+	}
 	.mobile {
 		display: initial;
 		padding-top: 5%;
@@ -512,19 +553,6 @@ input[type=submit] {
 		height: 50%;
 	}
 
-	.flex-item2 {
-		display: inline-flex;
-		width: 25%;
-		position: relative;
-
-	}
-
-	.flex-item1 {
-		display: inline-flex;
-		position: relative;
-		width: 50%;
-	}
-
 	.padding-top-20 {
 		padding-top: 10%
 	}
@@ -535,5 +563,19 @@ input[type=submit] {
 
 	.line-break1 {
 		display: inline;
+	}
+}
+
+/*******************************/
+/***** MOBILE RESPONSIZVE ******/
+/*******************************/
+
+@media only screen and (max-width:601px){
+	.flex-item1 {
+		flex: 2 1 100%;
+	}
+
+	.flex-item2{
+		flex:1 1 48%;
 	}
 }

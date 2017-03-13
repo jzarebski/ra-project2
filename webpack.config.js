@@ -58,12 +58,12 @@ module.exports = {
         src: join(PATHS.src, 'index.js')
     },
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['.js']
     },
     output: {
         path: process.cwd(),
         publicPath: '',
-        filename: join(PATHS.build,'bundle.js')
+        filename: join(PATHS.build,'bundlex.js')
     },
     module: {
         loaders: [
@@ -74,9 +74,12 @@ module.exports = {
         },
         {
             test: /\.js$/,
-            loader: 'babel',
+            loader: 'babel-loader',
             include: PATHS.src,
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            query: {
+                presets: ['es2015'],
+            }
         },
         {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -91,7 +94,7 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        progress: true,
+        // progress: true,
 
         // display only errors to reduce the amount of output
         stats: 'errors-only',

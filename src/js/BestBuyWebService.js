@@ -7,6 +7,7 @@ export default class BestBuyWebService{
     constructor(){
         this.url ="";
         this.apiKey = "";
+        // this.categoryPath = "";
         this.productData = null;
         this.products = null;
     }

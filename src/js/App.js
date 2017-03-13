@@ -19,6 +19,7 @@ export default class App {
         this.shoppingCart = new ShoppingCart();
         this.catalogView = new CatalogView(); // this will display our data
 
+
         //this.shoppingCartView = new ShoppingCartView;
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
@@ -32,8 +33,10 @@ export default class App {
         // use your own API key for this (the one from Cody)
         this.bbws.apiKey = "8ccddf4rtjz5k5btqam84qak";
 
+        this.categoryPath.id = "";
+
         // this uses 'backticks' for long multi-line strings
-        this.bbws.url = `https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))?apiKey=${this.bbws.apiKey}&format=json`;
+        this.bbws.url = `https://api.bestbuy.com/v1/products((categoryPath.id=abcat0020002))?apiKey=${this.bbws.apiKey}&format=json`;
 
         // pass the reference to this app to store the data
         this.bbws.getData(this);

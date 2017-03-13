@@ -13,7 +13,7 @@ import ShoppingCartView from './ShoppingCartView';
 export default class App {
 
     constructor() {
-        console.log("hi")
+        //console.log("hi")
         this.productData = null; // this will store all our data
         this.products = null; // stores specifically the products
         this.shoppingCart = new ShoppingCart();
@@ -34,7 +34,7 @@ export default class App {
 
         // this uses 'backticks' for long multi-line strings
         this.bbws.url = `https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))?apiKey=${this.bbws.apiKey}&format=json`;
-
+        //abcat0502000
         // pass the reference to this app to store the data
         this.bbws.getData(this);
 
@@ -48,7 +48,7 @@ export default class App {
             // only get the products property (for now)
             // this code was copied from SimpleHTTPRequest.html
             this.products = this.bbws.getProducts();
-            console.log(this.products, "here i am producting");
+            // console.log(this.products, "here i am producting");
         }
 
         this.showCatalog();
@@ -85,12 +85,12 @@ export default class App {
             // create for loop to cycle through products to find match
             // use jquery to append html textnode
             // use jquery to append html text
-            let imagesrc = "https://lh5.ggpht.com/tq3WqEUxtRyBn-d_0t3j6WKNHuJDrmLq-FE3GAYrsAMQFIaS7FIgRLfzzql2SvfvLqto=w300";
-            let someImage = new Image();
-            someImage.src = imagesrc;
-            someImage.addEventListener("load", function(e){
-                $("#qvImage").attr("src",this.src);
-            },false);
+            //let imagesrc = "https://lh5.ggpht.com/tq3WqEUxtRyBn-d_0t3j6WKNHuJDrmLq-FE3GAYrsAMQFIaS7FIgRLfzzql2SvfvLqto=w300";
+            //let someImage = new Image();
+            //someImage.src = imagesrc;
+            //someImage.addEventListener("load", function(e){
+            //    $("#qvImage").attr("src",this.src);
+            //},false);
 
             // $("#qvimage").on("load",imagesrc, function (e){
             //    console.log(e.data);

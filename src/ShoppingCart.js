@@ -19,7 +19,7 @@ export default class ShoppingCart{
     initShoppingCart(){
         // create the sessionStorage object that will be used
         // to store the items.
-        console.log("finished creating shopping cart");
+        console.log("finished creating shopping cart----------new new new");
     }
 
     addItemToCart(sku){

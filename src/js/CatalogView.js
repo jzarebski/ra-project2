@@ -4,6 +4,7 @@
 
 // this class is responsible for displaying the product data...
 // Perhaps in a carousel.
+
 export default class CatalogView{
 
     constructor() {
@@ -14,7 +15,7 @@ export default class CatalogView{
     }
 
     initCarousel() {
-        console.log("initializing carousel");
+        //console.log("initializing carousel");
         $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
                 items:1,
@@ -35,7 +36,7 @@ export default class CatalogView{
 
             });
         });
-        console.log("carousel active");
+        //console.log("carousel active");
         /*
          You should initialize the flickicity carousel here.
          Right now this code just adds the div tags you would need to add
@@ -52,19 +53,19 @@ export default class CatalogView{
     }
 
     onClickCartButton(theApp) {
-        console.log(theApp);
+        //console.log(theApp);
         return function (e) {
-            console.log("onClickButton");
-            console.log(e.target.getAttribute("data-sku"));
+          //  console.log("onClickButton");
+          //  console.log(e.target.getAttribute("data-sku"));
             let sku = e.target.getAttribute("data-sku");
-            console.log(theApp);
-            console.log(theApp.shoppingCart);
+          //  console.log(theApp);
+          //  console.log(theApp.shoppingCart);
             theApp.shoppingCart.addItemToCart(sku);
         }
     }
-        addProductsToCarousel(products, theApp){
+        addProductsToCarousel(products, theApp) {
             this.theApp = theApp;
-            console.log(products);
+            //console.log(products);
             if (products === undefined || products == null) {
                 return; // do not do anything! there is no data
             }
@@ -81,7 +82,7 @@ export default class CatalogView{
 
             for (let p = 0; p < products.length; p++) {
                 let product = products[p];
-                console.log(product);
+                // console.log(product);
                 // each product is a product object
                 // use it to create the element
 
@@ -127,6 +128,7 @@ export default class CatalogView{
                 quickViewButton.setAttribute("class", "quickViewBtn");
                 let quickViewTextNode = document.createTextNode("Quick View");
                 quickViewButton.appendChild(quickViewTextNode);
+                quickViewButton.addEventListener("click", this.qView(this.theApp, products), false);
 
                 let addToCartButton = document.createElement("button");
                 addToCartButton.setAttribute("id", `cart_${product.sku}`);
@@ -136,10 +138,10 @@ export default class CatalogView{
                 let addToCartTextNode = document.createTextNode("Add To Cart");
 
                 addToCartButton.appendChild(addToCartTextNode);
-                console.log("this.theApp is");
-                console.log(this.theApp);
+                //console.log("this.theApp is");
+                //console.log(this.theApp);
                 addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp), false);
-               console.log("click cart button");
+                //console.log("click cart button");
                 newDiv.appendChild(newImg);
                 newDiv.appendChild(newPara);
                 newDiv.appendChild(newH3Tag);
@@ -147,11 +149,48 @@ export default class CatalogView{
                 newDiv.appendChild(quickViewButton);
                 newDiv.appendChild(addToCartButton);
                 this.carousel[0].appendChild(newDiv);
-                console.log(this.carousel[0]);
+               // console.log(this.carousel[0]);
 
             }
-            console.log(this.carousel[0]);
+            //console.log(this.carousel[0]);
             this.initCarousel();
-        }
+        };
 
-    }
+
+
+            ////wrote this with josi////
+            qView(products) {
+                let output = "";
+                let dataSku = e.target.getAttribute("data-sku");
+
+                return function (e) {
+                    //console.log("im in quickview");
+                    for (let p = 0; p < products.length; p++) {
+                        let currentProducts = products[p];
+                        let productsSku = currentProducts.sku;
+                    if (currentProducts.sku.toString() == dataSku.toString()) {
+                        let img = currentProducts.image;
+                        let name = currentProducts.name;
+                        let price = currentProducts.regularPrice;
+
+                        output += `<div>
+                                        <div>
+                                            <img class="" height="300" width="300" src=${img}>
+                                        </div >
+                                        <div>
+                                            <h3>${name}</h3>
+                                            <p>${price}</p>
+                                        </div>
+                                   </div>`;
+                        }
+                    }
+                    $(".quickViewBox").html(output);
+                    $(".quickViewBox, .overlayQv").fadeIn("slow");
+                    $(document).on("click", '.overlayQv', function() {
+                        $(".overlayQv, .quickViewBox").fadeOut("slow");
+                    });
+                }
+            }
+            };
+
+

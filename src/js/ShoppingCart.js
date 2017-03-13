@@ -5,7 +5,7 @@
 export default class ShoppingCart{
 
     constructor(){
-        console.log("creating shopping cart");
+        //console.log("creating shopping cart");
         if(Storage){
             this.ss = sessionStorage;
             // you can create a shoppingCart!
@@ -19,30 +19,30 @@ export default class ShoppingCart{
     initShoppingCart(){
         // create the sessionStorage object that will be used
         // to store the items.
-        console.log("finished creating shopping cart");
+        console.log("im working now");
     }
 
     addItemToCart(sku){
-        console.log("adding items to cart")
+        //console.log("adding items to cart")
         let numMatches = 0;
 
         for (var i = 0; i < this.ss.length; i++) {
 
             if ( this.ss.key(i) == sku){
-                console.log("I found an item with a matching sku : " + sku);
+                //console.log("I found an item with a matching sku : " + sku);
 
                 let oldQuanity = this.ss.getItem(sku);
-                console.log("oldVal is equal to " + oldQuanity);
-
+                //console.log("oldVal is equal to " + oldQuanity);
+            // add to cart //
                 this.ss.setItem(sku, parseInt(oldQuanity) + 1);
-                console.log("I just set the value to: " + this.ss.getItem(sku));
+                //console.log("I just set the value to: " + this.ss.getItem(sku));
                 numMatches = 1;
                 //break;
             }
 
         }
         if(numMatches == 0){
-            console.log("could not find sku in memory adding now")
+            // console.log("could not find sku in memory adding now")
             this.ss.setItem(sku,1);
         }
 

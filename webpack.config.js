@@ -63,7 +63,7 @@ module.exports = {
     output: {
         path: process.cwd(),
         publicPath: '',
-        filename: join(PATHS.build,'bundlex.js')
+        filename: join(PATHS.build,'bundle.js')
     },
     module: {
         loaders: [

@@ -4,7 +4,7 @@ var rename = require("gulp-rename")
 var sass = require ("gulp-sass")
 
 gulp.task("hello",function(){
-	console.log("hello world");
+	//console.log("hello world");
 });
 
 gulp.task('sass', function(){

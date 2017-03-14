@@ -24,7 +24,7 @@ export default class App {
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
         this.initShoppingCart();
-        this.initquickView ();
+        //this.initquickView ();
     }
 
     initBestBuyWebService() {
@@ -74,9 +74,9 @@ export default class App {
             $(".overlay, #cartView").fadeOut("slow");
         });
     }
-
-    initquickView() {
-        $(document).on("click",'.quickViewBtn', function (e) {
+    //
+    // initquickView() {
+    //     $(document).on("click",'.quickViewBtn', function (e) {
             //i want to add products in this quickViewBox
             // i need img desc. price and sku
             // get the products from this.products
@@ -95,13 +95,13 @@ export default class App {
             // $("#qvimage").on("load",imagesrc, function (e){
             //    console.log(e.data);
             // });
-
-            $(".quickViewBox, .overlayQv").fadeIn("slow");
-        });
-        $(document).on("click",'.overlayQv', function (e) {
-            $(".overlayQv, .quickViewBox").fadeOut("slow");
-        });
-    }
+    //         $(".quickViewBox").html(output);
+    //         $(".quickViewBox, .overlayQv").fadeIn("slow");
+    //     });
+    //     $(document).on("click",'.overlayQv', function (e) {
+    //         $(".overlayQv, .quickViewBox").fadeOut("slow");
+    //     });
+    // }
 }
 
 

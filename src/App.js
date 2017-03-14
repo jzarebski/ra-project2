@@ -33,7 +33,7 @@ export default class App {
         this.bbws.apiKey = "8ccddf4rtjz5k5btqam84qak";
 
         // this uses 'backticks' for long multi-line strings
-        this.bbws.url = `https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))?apiKey=${this.bbws.apiKey}&format=json`;
+        this.bbws.url = `https://api.bestbuy.com/v1/products(manufacturer=ASUS&(categoryPath.id=abcat0502000))?apiKey=${this.bbws.apiKey}&format=json`;
         //abcat0502000
         // pass the reference to this app to store the data
         this.bbws.getData(this);
@@ -74,34 +74,6 @@ export default class App {
             $(".overlay, #cartView").fadeOut("slow");
         });
     }
-    //
-    // initquickView() {
-    //     $(document).on("click",'.quickViewBtn', function (e) {
-            //i want to add products in this quickViewBox
-            // i need img desc. price and sku
-            // get the products from this.products
-            // get the sku from Data-sku attribute of button
-            // loop throught the products to find match the sku with the data sku
-            // create for loop to cycle through products to find match
-            // use jquery to append html textnode
-            // use jquery to append html text
-            //let imagesrc = "https://lh5.ggpht.com/tq3WqEUxtRyBn-d_0t3j6WKNHuJDrmLq-FE3GAYrsAMQFIaS7FIgRLfzzql2SvfvLqto=w300";
-            //let someImage = new Image();
-            //someImage.src = imagesrc;
-            //someImage.addEventListener("load", function(e){
-            //    $("#qvImage").attr("src",this.src);
-            //},false);
-
-            // $("#qvimage").on("load",imagesrc, function (e){
-            //    console.log(e.data);
-            // });
-    //         $(".quickViewBox").html(output);
-    //         $(".quickViewBox, .overlayQv").fadeIn("slow");
-    //     });
-    //     $(document).on("click",'.overlayQv', function (e) {
-    //         $(".overlayQv, .quickViewBox").fadeOut("slow");
-    //     });
-    // }
 }
 
 

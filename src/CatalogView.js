@@ -36,18 +36,6 @@ export default class CatalogView{
             });
         });
         //console.log("carousel active");
-        /*
-         You should initialize the flickicity carousel here.
-         Right now this code just adds the div tags you would need to add
-         inside the carousel 'container'.
-         Note that this.carousel refers to the div by its class attribute.
-         Since more than one tag can belong to the same class,
-         you either have to give the carousel tag an id as well...or
-         refer to the carousel div tag as this.carousel[0] using bracket
-         notation (since classes mean their *could* be more than one tag
-         belonging to that class) - see line 88 below.
-         */
-        //this.carousel = document.getElementById("owl-carousel");
 
     }
 
@@ -56,8 +44,9 @@ export default class CatalogView{
         return function (e) {
             //console.log("onClickButton");
             //console.log(e.target.getAttribute("data-sku"));
-            let sku = e.target.getAttribute("data-sku");
-            theApp.shoppingCart.addItemToCart(sku);
+            let theSku = e.target.getAttribute("data-sku");
+            theApp.shoppingCart.addItemToCart(theSku,theApp);
+            theApp.shoppingCart.removeItemFromCart(theSku);
         }
     }
     addProductsToCarousel(products, theApp){
@@ -135,9 +124,9 @@ export default class CatalogView{
 
             addToCartButton.appendChild(addToCartTextNode);
             //console.log("this.theApp is");
-            //console.log(this.theApp);
+            // console.log(this.theApp);
             addToCartButton.addEventListener("click", this.onClickCartButton(this.theApp), false);
-            //console.log("click cart button");
+            // console.log("click cart button");
             newDiv.appendChild(newImg);
             newDiv.appendChild(newPara);
             newDiv.appendChild(newH3Tag);
@@ -169,12 +158,12 @@ export default class CatalogView{
 
                     output = `<div class"qv-flexbox">
                                 <div>
-                                    <img src=${img} height="300" width="300" >
+                                    <img src=${img} height="200" width="300" >
                                 </div >
                                 <div class="">
                                     <h3>${name}</h3>
                                     <p>${price}</p>
-                                <!--<button class="addToCart" data-sku=${productsSku} >Add to cart</button>-->
+                                    <button class="addToCart" data-sku=${productsSku} >Add to cart</button>
                                 </div>
                               </div>`;
                 }
@@ -186,6 +175,8 @@ export default class CatalogView{
             $(document).on("click", '.overlayQv', function () {
                 $(".overlayQv, .quickViewBox").fadeOut("slow");
             });
+            let addToCartButton = document.getElementsByClassName('addToCart');
+            addToCartButton[0].addEventListener("click",this.catalogView.onClickCartButton(this.catalogView.theApp), false);
         }
     }
 

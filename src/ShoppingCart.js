@@ -1,7 +1,3 @@
-/**
- * Created by Edward_J_Apostol on 2017-01-29.
- */
-
 export default class ShoppingCart{
 
     constructor(){
@@ -12,7 +8,7 @@ export default class ShoppingCart{
             this.initShoppingCart();
         } else
         {
-            // console.log("Error! SessionStorage not supported in your browser!");
+            console.log("Error! SessionStorage not supported in your browser!");
         }
     }
 
@@ -26,14 +22,12 @@ export default class ShoppingCart{
         // console.log("adding items to cart")
         let numMatches = 0;
 
-        for (var i = 0; i < this.ss.length; i++) {
+        for (let i = 0; i < this.ss.length; i++) {
 
             if ( this.ss.key(i) == sku){
                 //console.log("I found an item with a matching sku : " + sku);
 
                 let oldQuanity = this.ss.getItem(sku);
-                //console.log("oldVal is equal to " + oldQuanity);
-
                 this.ss.setItem(sku, parseInt(oldQuanity) + 1);
                 //console.log("I just set the value to: " + this.ss.getItem(sku));
                 numMatches = 1;
